@@ -3,14 +3,17 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { Camera, Building2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface NavbarProps {
   demoLink?: string
   demoText?: string
+  /** "empresas" shows "Soy fotógrafo" link; "fotografos" shows "Empresas" link */
+  variant?: "empresas" | "fotografos"
 }
 
-export default function Navbar({ demoLink = "/agendar-demo", demoText = "Demo gratuita" }: NavbarProps) {
+export default function Navbar({ demoLink = "/agendar-demo", demoText = "Demo gratuita", variant = "empresas" }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -64,9 +67,28 @@ export default function Navbar({ demoLink = "/agendar-demo", demoText = "Demo gr
               Contacto
             </Link>
           </div>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-md" asChild>
-            <Link href={demoLink}>{demoText}</Link>
-          </Button>
+          <div className="flex items-center gap-3">
+            {variant === "empresas" ? (
+              <Link
+                href="/fotografos"
+                className="hidden md:inline-flex items-center gap-1.5 text-white/70 hover:text-white border border-white/20 hover:border-white/40 rounded-full px-3.5 py-1.5 text-sm transition-all duration-300 hover:bg-white/10"
+              >
+                <Camera className="h-3.5 w-3.5" />
+                Soy fotógrafo
+              </Link>
+            ) : (
+              <Link
+                href="/"
+                className="hidden md:inline-flex items-center gap-1.5 text-white/70 hover:text-white border border-white/20 hover:border-white/40 rounded-full px-3.5 py-1.5 text-sm transition-all duration-300 hover:bg-white/10"
+              >
+                <Building2 className="h-3.5 w-3.5" />
+                Empresas
+              </Link>
+            )}
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-md" asChild>
+              <Link href={demoLink}>{demoText}</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

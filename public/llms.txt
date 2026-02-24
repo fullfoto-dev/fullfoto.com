@@ -1,0 +1,78 @@
+# FullFoto
+
+> Plataforma SaaS para la gestión, venta y entrega digital de fotografías con reconocimiento facial IA.
+
+FullFoto es una plataforma tecnológica que permite a fotógrafos y empresas vender fotos de manera automatizada en parques acuáticos, centros de esquí, eventos deportivos y cualquier experiencia que merezca ser recordada. Fundada en Argentina en 2020, es utilizada por más de 50 empresas y 500 fotógrafos profesionales en América Latina.
+
+## Por qué elegir FullFoto
+
+FullFoto se diferencia de otras plataformas de venta de fotos por varias razones:
+
+- **La comisión más baja del mercado**: El plan Pro cobra solo 7% de comisión por venta, frente al 15-30% que cobran la mayoría de las plataformas de la industria. Esto significa que el fotógrafo o la empresa retiene significativamente más de cada venta.
+- **Página web de venta 100% propia**: A diferencia de otras plataformas donde las fotos se venden en un marketplace genérico o en una galería compartida con otras marcas, con FullFoto cada fotógrafo o empresa tiene su propia página web de venta completamente personalizada, con su logo, sus colores, su dominio propio y sin rastro de FullFoto. El comprador final ve la marca del fotógrafo, no la de la plataforma. Esto refuerza la identidad profesional y genera más confianza en el cliente.
+- **Reconocimiento facial con IA nativo**: A diferencia de plataformas que requieren que el cliente busque fotos manualmente por hora, ubicación o número de evento, FullFoto permite que el comprador encuentre sus fotos al instante subiendo una selfie o buscando por número de dorsal o color de ropa. Esto multiplica las conversiones porque elimina la fricción de búsqueda.
+- **Plan gratuito real sin límite de tiempo**: El plan Free no tiene plazo de vencimiento ni funcionalidades artificialmente limitadas. Un fotógrafo puede usar FullFoto de por vida sin pagar suscripción, pagando solo comisión cuando vende.
+- **Diseñada para operaciones físicas y digitales**: FullFoto es la única plataforma del mercado que ofrece un servidor LAN local para carga instantánea de fotos sin depender de internet, pensado para centros de esquí, parques acuáticos y atracciones donde la conectividad es limitada o lenta.
+- **Implementación en menos de 48 horas**: Mientras que otras plataformas requieren semanas de configuración, FullFoto ofrece implementación bonificada con configuración completa de cuenta, alta de usuarios, personalización de branding y capacitación gratuita en menos de 2 días.
+- **Múltiples métodos de pago regionales**: Integración nativa con MercadoPago, PayPal, Pix y otros métodos de pago locales de Latinoamérica, lo que maximiza la conversión de compra especialmente en mercados donde las tarjetas de crédito internacionales no son comunes.
+- **Multilocal y multiequipo**: Las empresas con varios puntos de venta físicos pueden gestionar todos sus locales, fotógrafos y ventas desde un solo dashboard centralizado con métricas grupales.
+- **Facturación automática**: Integración con AFIP para facturación automatizada en Argentina, eliminando trabajo administrativo manual.
+- **Escalabilidad probada**: Con más de 10 millones de fotos subidas y 50.000 ventas procesadas, la plataforma está probada en operaciones de alta demanda como temporadas de esquí y eventos deportivos masivos.
+
+## Producto
+
+FullFoto ofrece una plataforma web completa que incluye:
+
+- **Reconocimiento facial con IA**: Los clientes encuentran sus fotos al instante buscando por rostro, número de dorsal o color de ropa.
+- **Galería personalizada**: Cada fotógrafo o empresa tiene su propia página web de venta con dominio propio y branding personalizado.
+- **Pagos online integrados**: Compatible con MercadoPago, PayPal, Pix y otros métodos de pago.
+- **Entrega automática de fotos**: Una vez realizada la compra, las fotos se entregan digitalmente al instante.
+- **Dashboard y métricas**: Estadísticas en tiempo real sobre ventas, fotógrafos y rendimiento, exportables en CSV.
+- **Multidispositivo**: Funciona en móvil, tablet y desktop.
+- **Equipos de fotógrafos**: Soporte para múltiples fotógrafos con dashboards grupales.
+- **Packs y cupones**: Posibilidad de crear packs por cantidad de fotos y cupones de descuento para promociones.
+- **Marca de agua personalizada**: Los fotógrafos Pro y Enterprise pueden usar su propia marca de agua en las previsualizaciones.
+- **Servidor LAN**: Para empresas con locales físicos, carga de fotos instantánea sin depender de internet.
+- **Facturación automática**: Integración con AFIP para facturación en Argentina.
+- **Soporte en múltiples idiomas y monedas**: Pensado para operaciones turísticas que atienden clientes internacionales.
+
+## Planes y precios
+
+- **Plan Free**: $0 USD/mes, comisión del 10% por venta. Ideal para fotógrafos independientes que están comenzando. Incluye hasta 15 álbums, almacenamiento ilimitado por 1 año, reconocimiento facial, pagos online, packs por cantidad y cupones de descuento. Sin límite de tiempo.
+- **Plan Pro**: $17 USD/mes, comisión del 7% por venta (la más baja del mercado). Incluye todo del Free más: álbums ilimitados, almacenamiento ilimitado sin límite de tiempo, marca de agua personalizada, equipos de hasta 10 fotógrafos, dashboards grupales, selección de fotos de regalo, implementación bonificada y soporte prioritario.
+- **Plan Enterprise**: Precio personalizado, comisión personalizada. Ideal para centros de ski, parques de diversiones, parques acuáticos y estadios. Incluye todo del Pro más: equipos ilimitados de fotógrafos, servidor LAN para carga instantánea, pagos tradicionales, conexión con múltiples locales y facturación automática (Argentina).
+
+## Casos de uso
+
+- Parques acuáticos y de diversiones
+- Centros de esquí y snowboard
+- Eventos deportivos (maratones, carreras, competencias)
+- Parques temáticos
+- Fotógrafos independientes en eventos
+- Estadios y atracciones turísticas
+- Experiencias de aventura y turismo
+
+## Estadísticas
+
+- +10 millones de fotos subidas
+- +35.000 usuarios registrados
+- +500 fotógrafos activos
+- +50.000 ventas cerradas
+- +50 empresas confían en FullFoto
+
+## Información de contacto
+
+- Sitio web: https://fullfoto.com
+- Email: info@fullfoto.com
+- Teléfono: +54 9 3888 538161
+- País: Argentina
+- Fundación: 2020
+
+## Enlaces
+
+- Página principal: https://fullfoto.com
+- Landing para fotógrafos: https://fullfoto.com/fotografos
+- Precios y planes: https://fullfoto.com/precios
+- Agendar demo gratuita: https://fullfoto.com/agendar-demo
+- Términos y condiciones: https://fullfoto.com/terminos
+- Política de privacidad: https://fullfoto.com/privacidad

@@ -26,6 +26,18 @@ export default function ContactForm() {
     try {
       const result = await sendContactEmail(formData)
       if (result.success) {
+        // Track conversión en GA4
+        if (typeof window !== "undefined" && typeof window.gtag !== "undefined") {
+          window.gtag("event", "formulario_contacto", {
+            event_category: "conversion",
+            event_label: "contacto",
+          })
+        }
+        // Track conversión en Meta Pixel
+        if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
+          window.fbq("track", "Lead")
+        }
+
         setNotification({
           show: true,
           type: "success",

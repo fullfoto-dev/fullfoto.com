@@ -124,7 +124,7 @@ export async function sendDemoEmail(formData: FormData) {
     // Enviar el email
     await transporter.sendMail(mailOptions)
 
-    return { success: true, message: "Solicitud de demo enviada correctamente" }
+    return { success: true, message: "¡Solicitud recibida! Te contactaremos por WhatsApp para confirmar día y horario de tu demo." }
   } catch (error) {
     console.error("Error al enviar el email de demo:", error)
     if (error instanceof z.ZodError) {
