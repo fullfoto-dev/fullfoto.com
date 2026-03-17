@@ -233,7 +233,7 @@ export default function Home() {
               { value: "+10M", label: "Fotos subidas" },
               { value: "+35k", label: "Usuarios registrados" },
               { value: "+500", label: "PHs activos" },
-              { value: "+50k", label: "Ventas cerradas" },
+              { value: "+75k", label: "Ventas cerradas" },
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-blue-200 bg-clip-text text-transparent">{stat.value}</div>

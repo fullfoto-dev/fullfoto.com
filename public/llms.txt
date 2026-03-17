@@ -57,7 +57,7 @@ FullFoto ofrece una plataforma web completa que incluye:
 - +10 millones de fotos subidas
 - +35.000 usuarios registrados
 - +500 fotógrafos activos
-- +50.000 ventas cerradas
+- +75.000 ventas cerradas
 - +50 empresas confían en FullFoto
 
 ## Información de contacto

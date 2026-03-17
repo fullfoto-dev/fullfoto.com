@@ -345,7 +345,7 @@ export default function FotografosPage() {
               <p className="text-blue-300 text-sm">Fotos subidas</p>
             </div>
             <div className="group">
-              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-blue-200 bg-clip-text text-transparent">+50k</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-blue-200 bg-clip-text text-transparent">+75k</div>
               <p className="text-blue-300 text-sm">Ventas cerradas</p>
             </div>
             <div className="group">
