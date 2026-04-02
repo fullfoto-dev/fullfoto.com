@@ -33,7 +33,7 @@ const transporter = nodemailer.createTransport({
 })
 
 // Lista de destinatarios
-const recipients = ["gaspar@fullfoto.com", "tate@fullfoto.com", "gaspar.rodriguez93@gmail.com"]
+const recipients = ["octavio@fullfoto.com", "gaspar@fullfoto.com", "tate@fullfoto.com"]
 
 // Función para enviar email de contacto
 export async function sendContactEmail(formData: FormData) {
