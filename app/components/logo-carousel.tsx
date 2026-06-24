@@ -13,10 +13,10 @@ const clients = [
   { src: "/clients/aquopolis.png", alt: "Aquopolis", w: 160 },
   { src: "/clients/cerromartial.png", alt: "Cerro Martial", w: 160 },
   { src: "/clients/infinitowaterpark.png", alt: "Infinito Water Park", w: 170 },
+  { src: "/clients/chapelco.png", alt: "Cerro Chapelco", w: 170 },
+  { src: "/clients/xtreme.png", alt: "Escuela Xtreme", w: 170 },
 ]
 
-// Each logo slot = image width area (192px) + padding (48px) = 240px per slot
-// 10 logos × 240px = 2400px per set
 const SLOT_WIDTH = 240
 const SET_WIDTH = clients.length * SLOT_WIDTH
 
