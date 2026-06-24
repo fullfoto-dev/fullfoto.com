@@ -8,12 +8,15 @@ export function OrganizationJsonLd() {
     description:
       "Plataforma SaaS líder en venta de fotografías con reconocimiento facial IA. La comisión más baja del mercado (7%), implementación en 48 hs y usada por +50 empresas y +500 fotógrafos en Latinoamérica.",
     email: "info@fullfoto.com",
-    telephone: "+5493888538161",
+    telephone: "+5491178279790",
     address: {
       "@type": "PostalAddress",
       addressCountry: "AR",
     },
-    sameAs: [],
+    sameAs: [
+      "https://www.instagram.com/fullfoto.app/",
+      "https://www.linkedin.com/company/fullfoto/",
+    ],
     foundingDate: "2020",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
@@ -95,12 +98,9 @@ export function SoftwareApplicationJsonLd() {
         },
       ],
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "50",
-      bestRating: "5",
-    },
+    // aggregateRating removido temporalmente: Google puede penalizar reviews schema
+    // self-reported sin source verificable. Reactivar cuando haya reviews públicas
+    // en G2/Capterra/Trustpilot con URL linkeable.
   }
 
   return (
@@ -128,6 +128,64 @@ export function FAQPageJsonLd({ faqs }: { faqs: FAQItem[] }) {
         text: faq.answer,
       },
     })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+interface CaseStudyJsonLdProps {
+  title: string
+  description: string
+  url: string
+  image: string
+  datePublished: string
+  clientName: string
+  clientUrl?: string
+}
+
+export function CaseStudyJsonLd({
+  title,
+  description,
+  url,
+  image,
+  datePublished,
+  clientName,
+  clientUrl,
+}: CaseStudyJsonLdProps) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: `https://fullfoto.com${image}`,
+    datePublished,
+    author: {
+      "@type": "Organization",
+      name: "FullFoto",
+      url: "https://fullfoto.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "FullFoto",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://fullfoto.com/logo-nuevo-blanco.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://fullfoto.com${url}`,
+    },
+    about: {
+      "@type": "Organization",
+      name: clientName,
+      ...(clientUrl ? { url: clientUrl } : {}),
+    },
   }
 
   return (

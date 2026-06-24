@@ -5,8 +5,8 @@ import { ChevronLeft, Shield, Mail, Phone } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 
 export const metadata = {
-  title: "Política de Privacidad – FullFoto",
-  description: "Política de Privacidad de la plataforma FullFoto. Cómo recopilamos, utilizamos y protegemos tu información.",
+  title: "Política de privacidad",
+  description: "Cómo recopilamos, utilizamos y protegemos tu información en FullFoto. Política de privacidad completa de la plataforma.",
 }
 
 export default function PrivacidadPage() {
@@ -174,9 +174,9 @@ export default function PrivacidadPage() {
                 <Mail className="h-4 w-4" />
                 info@fullfoto.com
               </a>
-              <a href="tel:+5493888538161" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
+              <a href="tel:+5491178279790" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
                 <Phone className="h-4 w-4" />
-                +54 9 3888 538161
+                +54 9 11 7827-9790
               </a>
             </div>
             <p className="text-sm">&copy; {new Date().getFullYear()} FullFoto. Todos los derechos reservados.</p>

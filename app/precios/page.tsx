@@ -7,11 +7,17 @@ import PricingHeroBackground from "@/app/components/pricing-hero-background"
 import { Button } from "@/components/ui/button"
 import Navbar from "@/app/components/navbar"
 import { FAQPageJsonLd, BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/app/components/json-ld"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Precios y Planes",
+  title: "Precios y planes: desde $0 con 7% comisión",
   description:
-    "Planes desde $0/mes con solo 7% de comisión. Free, Pro y Enterprise para fotógrafos y empresas. Sin costos ocultos, la comisión más baja del mercado.",
+    "Planes Free, Pro y Enterprise desde $0/mes con la comisión más baja del mercado (7%). Sin costos ocultos. Ideal para fotógrafos independientes y empresas.",
   alternates: { canonical: "/precios" },
 }
 
@@ -326,52 +332,14 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                q: "¿Cómo funciona el plan FREE?",
-                a: "El plan FREE no tiene costo mensual, solo comisión por venta. Si un mes no hay ventas no se abona absolutamente nada.",
-              },
-              {
-                q: "¿Cómo funciona el plan PRO?",
-                a: "El plan PRO tiene una pequeña suscripción mensual que se absorbe con lo que se ahorra en la reducción de las comisiones. Rápidamente estarás pagando significativamente menos que en el plan Free.",
-              },
-              {
-                q: "¿Puedo cambiar de plan en el futuro?",
-                a: "Sí, puedes actualizar o cambiar tu plan en cualquier momento según las necesidades de tu negocio sin penalizaciones.",
-              },
-              {
-                q: "¿Qué incluye la implementación bonificada?",
-                a: "Configuración completa de tu cuenta, alta de usuarios, personalización de branding y soporte.",
-              },
-              {
-                q: "¿Cómo se calculan las comisiones?",
-                a: "Las comisiones se aplican únicamente sobre las ventas exitosas realizadas a través de la plataforma. No hay comisiones por fotos no vendidas.",
-              },
-              {
-                q: "¿El plan FREE tiene limitaciones de tiempo?",
-                a: "El plan FREE no tiene limitaciones de tiempo. Es perfecto para comenzar y probar la plataforma, pero si lo deseas, puedes continuar libre de suscripciones de por vida.",
-              },
-              {
-                q: '¿Qué significa "la comisión más baja del mercado"?',
-                a: "Con el plan PRO pagas solo 7% de comisión por venta, significativamente menor que otras plataformas del mercado que cobran entre 15-30%.",
-              },
-              {
-                q: "¿Para qué tipo de empresas es ideal el plan ENTERPRISE?",
-                a: "Este plan es ideal para centros de ski, parques de diversiones, parques acuáticos, estadios y todo tipo de atracciones donde se realicen venta de fotos.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-blue-100 hover:shadow-md hover:shadow-blue-50 transition-all duration-300"
-              >
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 group-hover:text-blue-700 transition-colors">
-                  {item.q}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.a}</p>
-              </div>
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
+            {pricingFaqs.map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
@@ -446,9 +414,9 @@ export default function PricingPage() {
                 <Mail className="h-4 w-4" />
                 info@fullfoto.com
               </a>
-              <a href="tel:+5493888538161" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
+              <a href="tel:+5491178279790" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
                 <Phone className="h-4 w-4" />
-                +54 9 3888 538161
+                +54 9 11 7827-9790
               </a>
             </div>
             <p className="text-sm">© {new Date().getFullYear()} FullFoto. Todos los derechos reservados.</p>

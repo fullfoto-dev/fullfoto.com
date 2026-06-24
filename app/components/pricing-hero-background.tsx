@@ -17,7 +17,7 @@ export default function PricingHeroBackground() {
 
       {/* Imagen optimizada */}
       <Image
-        src="/pricing-bg.png"
+        src="/pricing-bg.webp"
         alt="Paisaje montañoso con lago"
         fill
         className={`object-cover transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}

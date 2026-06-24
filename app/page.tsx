@@ -22,12 +22,55 @@ import { Button } from "@/components/ui/button"
 import Navbar from "@/app/components/navbar"
 import ContactForm from "@/app/components/contact-form"
 import LogoCarousel from "@/app/components/logo-carousel"
-import { SoftwareApplicationJsonLd } from "@/app/components/json-ld"
+import { SoftwareApplicationJsonLd, FAQPageJsonLd } from "@/app/components/json-ld"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+const homeFaqs = [
+  {
+    question: "¿Qué es FullFoto?",
+    answer:
+      "FullFoto es una plataforma SaaS que permite a empresas y fotógrafos vender fotografías de forma automatizada con reconocimiento facial por inteligencia artificial. Funciona en parques acuáticos, centros de esquí, eventos deportivos y cualquier experiencia donde haya volumen de fotos para distribuir. Cada cliente obtiene su propia web de venta personalizada con dominio propio, donde el comprador final encuentra sus fotos al instante con una selfie o por número de dorsal, paga online y recibe las imágenes en alta resolución. Fundada en Argentina en 2020, FullFoto procesa más de 10 millones de fotos y cerró +75.000 ventas para +50 empresas y +500 fotógrafos en Latinoamérica.",
+  },
+  {
+    question: "¿Qué tipo de empresas usan FullFoto?",
+    answer:
+      "FullFoto es utilizada por parques acuáticos, centros de esquí, parques temáticos, estadios y operadores de eventos deportivos en Argentina, Uruguay y otros países de Latinoamérica. Más de 50 empresas y 500 fotógrafos independientes la usan activamente, entre ellos Las Leñas, Termas Marinas, Patagonia Splash, Lago Hermoso y Cerro Martial.",
+  },
+  {
+    question: "¿Cómo funciona el reconocimiento facial de FullFoto?",
+    answer:
+      "El cliente final saca una selfie desde el sitio web de venta y la inteligencia artificial encuentra al instante todas las fotos donde aparece. También puede buscar por número de dorsal, color de ropa o ubicación. Esto elimina la fricción de scrollear miles de fotos y multiplica la conversión de venta hasta 6 veces frente al método manual.",
+  },
+  {
+    question: "¿Cuánto demora implementar FullFoto en una empresa?",
+    answer:
+      "La implementación completa toma menos de 48 horas. Incluye configuración de cuenta, alta de usuarios, personalización de branding (logo, colores, dominio propio) y capacitación gratuita del equipo. El plan Enterprise incluye implementación bonificada sin costo adicional.",
+  },
+  {
+    question: "¿Necesito conexión a internet en el local para usar FullFoto?",
+    answer:
+      "No. El plan Enterprise incluye un servidor LAN local que permite cargar fotos al instante sin depender de la conexión a internet. Está pensado para centros de esquí, parques acuáticos y atracciones donde la conectividad es limitada o intermitente.",
+  },
+  {
+    question: "¿Qué métodos de pago acepta FullFoto?",
+    answer:
+      "FullFoto integra MercadoPago, PayPal, Pix y los principales métodos de pago locales de Latinoamérica. El plan Enterprise también permite pagos tradicionales (efectivo, POS) en locales físicos. La facturación es automática en Argentina con integración a AFIP.",
+  },
+  {
+    question: "¿Cuánto cuesta FullFoto?",
+    answer:
+      "FullFoto tiene tres planes. Free a $0 USD/mes con 10% de comisión por venta, ideal para arrancar. Pro a $17 USD/mes con 7% de comisión (la más baja del mercado vs 15-30% de la competencia). Enterprise con precio y comisión personalizados para empresas con múltiples locales.",
+  },
+]
 
 export const metadata: Metadata = {
-  title: "FullFoto — Plataforma de venta de fotografías con reconocimiento facial IA",
   description:
-    "Vendé fotos en parques acuáticos, centros de esquí y eventos deportivos. Reconocimiento facial IA, pagos online, galerías personalizadas. +50 empresas ya confían en FullFoto.",
+    "Vendé fotos en parques acuáticos, centros de esquí y eventos deportivos. Reconocimiento facial IA, pagos online y galerías personalizadas. +50 empresas confían en FullFoto.",
   alternates: { canonical: "/" },
 }
 
@@ -35,6 +78,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <SoftwareApplicationJsonLd />
+      <FAQPageJsonLd faqs={homeFaqs} />
 
       <Navbar />
 
@@ -44,7 +88,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-image.jpg"
+            src="/hero-image.webp"
             alt="Fotógrafo capturando a un snowboarder en acción"
             fill
             className="object-cover scale-105"
@@ -180,7 +224,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-300/50">
                 <Image
-                  src="/fullfoto-dispositivos.png"
+                  src="/fullfoto-dispositivos.webp"
                   alt="FullFoto en múltiples dispositivos - móvil, tablet y desktop"
                   width={700}
                   height={500}
@@ -261,6 +305,133 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════
+          CASOS DE ÉXITO (teaser)
+      ═══════════════════════════════════════════════ */}
+      <section id="casos" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
+              <Sparkles className="h-4 w-4" />
+              Casos de éxito
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Empresas que ya escalaron con FullFoto
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Historias reales de parques, centros de ski y operadores audiovisuales que duplicaron sus ventas.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <Link
+              href="/casos-de-exito/infinito-water-park"
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50 hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src="/cases/infinito/1.webp"
+                  alt="Infinito Water Park"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="bg-white/90 backdrop-blur-sm text-gray-900 rounded-full px-3 py-1 text-xs font-medium">
+                    Parque acuático · Córdoba
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-blue-700 transition-colors">
+                  Infinito Water Park: venta automatizada en el parque más grande de Argentina
+                </h3>
+                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                  Foton operó la concesión audiovisual con +10 fotógrafos, servidores LAN y módulos de impresión automática.
+                </p>
+                <span className="inline-flex items-center gap-1 text-blue-600 font-medium text-sm group-hover:gap-2 transition-all">
+                  Leer caso
+                  <ChevronRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+
+            <Link
+              href="/casos-de-exito/lago-hermoso"
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50 hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src="/cases/lago-hermoso/1.webp"
+                  alt="Entrada al centro de ski Lago Hermoso"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="bg-white/90 backdrop-blur-sm text-gray-900 rounded-full px-3 py-1 text-xs font-medium">
+                    Centro de ski · Neuquén
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-blue-700 transition-colors">
+                  Lago Hermoso 2025: +100% en ventas vs temporada anterior
+                </h3>
+                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                  B-Side duplicó sus ventas con la plataforma, hardware y diseño del local de venta de FullFoto.
+                </p>
+                <span className="inline-flex items-center gap-1 text-blue-600 font-medium text-sm group-hover:gap-2 transition-all">
+                  Leer caso
+                  <ChevronRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/casos-de-exito"
+              className="inline-flex items-center text-sm text-gray-500 hover:text-blue-600 transition-colors font-medium group"
+            >
+              Ver todos los casos de éxito
+              <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          FAQ
+      ═══════════════════════════════════════════════ */}
+      <section id="faq" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
+              <Sparkles className="h-4 w-4" />
+              Preguntas frecuentes
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Lo que más nos preguntan
+            </h2>
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+              Resolvemos las dudas más comunes sobre FullFoto y cómo trabajamos con empresas y fotógrafos
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
+            {homeFaqs.map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
           CTA + CONTACTO
       ═══════════════════════════════════════════════ */}
       <section id="contacto" className="py-20 bg-gray-50">
@@ -324,9 +495,9 @@ export default function Home() {
                 <Mail className="h-4 w-4" />
                 info@fullfoto.com
               </a>
-              <a href="tel:+5493888538161" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
+              <a href="tel:+5491178279790" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
                 <Phone className="h-4 w-4" />
-                +54 9 3888 538161
+                +54 9 11 7827-9790
               </a>
             </div>
             <p className="text-sm">© {new Date().getFullYear()} FullFoto. Todos los derechos reservados.</p>

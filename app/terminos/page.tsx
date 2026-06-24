@@ -5,8 +5,8 @@ import { ChevronLeft, FileText, Mail, Phone } from "lucide-react"
 import Navbar from "@/app/components/navbar"
 
 export const metadata = {
-  title: "Términos y Condiciones – FullFoto",
-  description: "Términos y Condiciones de Uso de la plataforma FullFoto.",
+  title: "Términos y condiciones",
+  description: "Términos y condiciones de uso de la plataforma FullFoto. Reglas, derechos y obligaciones de uso del servicio.",
 }
 
 export default function TerminosPage() {
@@ -204,9 +204,9 @@ export default function TerminosPage() {
                 <Mail className="h-4 w-4" />
                 info@fullfoto.com
               </a>
-              <a href="tel:+5493888538161" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
+              <a href="tel:+5491178279790" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
                 <Phone className="h-4 w-4" />
-                +54 9 3888 538161
+                +54 9 11 7827-9790
               </a>
             </div>
             <p className="text-sm">&copy; {new Date().getFullYear()} FullFoto. Todos los derechos reservados.</p>

@@ -6,11 +6,17 @@ import { ChevronLeft, CheckCircle2, Mail, Phone, Sparkles, HelpCircle, Clock, Vi
 import Navbar from "@/app/components/navbar"
 import DemoForm from "@/app/components/demo-form"
 import { FAQPageJsonLd, BreadcrumbJsonLd } from "@/app/components/json-ld"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Agendar Demo Gratuita",
+  title: "Agendar demo gratuita: 30 min sin compromiso",
   description:
-    "Agenda una demostración personalizada de FullFoto. Descubrí cómo nuestra plataforma puede transformar tu negocio fotográfico. Sin compromiso.",
+    "Agendá una demo personalizada de FullFoto en 30 minutos. Te mostramos cómo vender fotos con IA y pagos online. Sin compromiso, en menos de 24 hs te contactamos.",
   alternates: { canonical: "/agendar-demo" },
 }
 
@@ -47,7 +53,7 @@ export default function AgendarDemoPage() {
       ═══════════════════════════════════════════════ */}
       <section className="relative pt-36 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/pricing-bg.png" alt="Paisaje montañoso con lago" fill className="object-cover scale-105" priority />
+          <Image src="/pricing-bg.webp" alt="Paisaje montañoso con lago" fill className="object-cover scale-105" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-blue-950/90"></div>
         </div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,11 +146,11 @@ export default function AgendarDemoPage() {
                         info@fullfoto.com
                       </a>
                       <a
-                        href="tel:+5493888538161"
+                        href="tel:+5491178279790"
                         className="flex items-center gap-3 text-sm text-blue-100/90 hover:text-white transition-colors"
                       >
                         <Phone className="h-4 w-4" />
-                        +54 9 3888 538161
+                        +54 9 11 7827-9790
                       </a>
                     </div>
                   </div>
@@ -185,36 +191,14 @@ export default function AgendarDemoPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              {
-                q: "¿Cuánto dura la demo?",
-                a: "Nuestras demos suelen durar entre 30 y 45 minutos, dependiendo de tus necesidades y preguntas.",
-              },
-              {
-                q: "¿Necesito preparar algo?",
-                a: "No es necesario, pero si tienes preguntas específicas o casos de uso, es útil tenerlos a mano.",
-              },
-              {
-                q: "¿Cómo se realiza la demo?",
-                a: "A través de una videollamada donde compartiremos pantalla para mostrarte la plataforma en funcionamiento.",
-              },
-              {
-                q: "¿Puedo invitar a mi equipo?",
-                a: "¡Por supuesto! Recomendamos que participen todas las personas involucradas en la toma de decisiones.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-blue-100 hover:shadow-md hover:shadow-blue-50 transition-all duration-300"
-              >
-                <h3 className="text-lg font-semibold mb-3 text-gray-900 group-hover:text-blue-700 transition-colors">
-                  {item.q}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.a}</p>
-              </div>
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
+            {demoFaqs.map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
@@ -247,9 +231,9 @@ export default function AgendarDemoPage() {
                 <Mail className="h-4 w-4" />
                 info@fullfoto.com
               </a>
-              <a href="tel:+5493888538161" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
+              <a href="tel:+5491178279790" className="flex items-center gap-2 hover:text-white transition-colors text-sm">
                 <Phone className="h-4 w-4" />
-                +54 9 3888 538161
+                +54 9 11 7827-9790
               </a>
             </div>
             <p className="text-sm">© {new Date().getFullYear()} FullFoto. Todos los derechos reservados.</p>

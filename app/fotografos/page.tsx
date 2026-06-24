@@ -21,12 +21,51 @@ import {
 
 import { Button } from "@/components/ui/button"
 import Navbar from "@/app/components/navbar"
-import { BreadcrumbJsonLd } from "@/app/components/json-ld"
+import { BreadcrumbJsonLd, FAQPageJsonLd } from "@/app/components/json-ld"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+const fotografosFaqs = [
+  {
+    question: "¿Qué necesito para empezar a vender mis fotos con FullFoto?",
+    answer:
+      "Solo tus fotos. Te armamos tu web de venta 100% personalizada en menos de 48 horas con tu logo, colores y dominio propio. Vos subís las fotos, compartís el link con tus clientes y ellos se buscan solos por reconocimiento facial o número de dorsal.",
+  },
+  {
+    question: "¿Cuánto cuesta FullFoto si estoy arrancando?",
+    answer:
+      "El plan Free es $0 USD/mes y solo cobramos 10% de comisión por venta. Si un mes no vendés nada, no pagás nada. No hay límite de tiempo. Cuando ya estés vendiendo seguido conviene pasarte al Pro ($17 USD/mes con 7% de comisión, la más baja del mercado).",
+  },
+  {
+    question: "¿Cómo cobro las ventas que hacen mis clientes?",
+    answer:
+      "Los pagos los procesa MercadoPago, PayPal o Pix directo a tu cuenta. No tenés que perseguir transferencias ni cobrar a mano: el sistema acredita la venta automáticamente y el cliente recibe sus fotos al instante. La comisión se descuenta solo sobre ventas exitosas.",
+  },
+  {
+    question: "¿Sirve para vender fotos de maratones, carreras o eventos deportivos?",
+    answer:
+      "Sí, es uno de los casos de uso principales. El reconocimiento facial y la búsqueda por número de dorsal hacen que un corredor encuentre sus fotos en segundos en vez de scrollear miles. Lo usan fotógrafos de running, trail, ciclismo, triatlón y fútbol en Argentina, Uruguay y otros países de Latinoamérica.",
+  },
+  {
+    question: "¿Puedo usar mi propio dominio y branding?",
+    answer:
+      "Sí. Desde el plan Free podés personalizar logo y colores. Con el plan Pro sumás tu dominio propio (ej. fotosjuanperez.com) y marca de agua personalizada. La web de venta es 100% tuya, FullFoto no aparece para el comprador final.",
+  },
+  {
+    question: "¿Qué pasa con las fotos que nadie compra?",
+    answer:
+      "Quedan en tu galería sin costo. El plan Free almacena por 1 año y el Pro de forma ilimitada. Las podés bajar, modificar o reemplazar cuando quieras. No hay penalización por fotos no vendidas: solo cobramos comisión sobre las ventas que sí se concretan.",
+  },
+]
 
 export const metadata: Metadata = {
-  title: "FullFoto para Fotógrafos — Tu web de fotos profesional",
+  title: "Software para vender fotos con IA y pagos online",
   description:
-    "Creá tu web de venta de fotos 100% personalizada. Reconocimiento facial, pagos online y dashboard de ventas. +500 fotógrafos ya usan FullFoto.",
+    "Creá tu web de venta de fotos 100% personalizada. Reconocimiento facial, pagos online y dashboard de ventas. +500 fotógrafos ya venden con FullFoto.",
   alternates: { canonical: "/fotografos" },
 }
 
@@ -34,6 +73,7 @@ export default function FotografosPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <BreadcrumbJsonLd items={[{ name: "Inicio", url: "/" }, { name: "Fotógrafos", url: "/fotografos" }]} />
+      <FAQPageJsonLd faqs={fotografosFaqs} />
 
       <Navbar
         demoLink="/agendar-demo?plan=fotografo"
@@ -47,7 +87,7 @@ export default function FotografosPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-fotografos.png"
+            src="/hero-fotografos.webp"
             alt="Fotógrafo profesional en acción"
             fill
             className="object-cover scale-105"
@@ -459,6 +499,35 @@ export default function FotografosPage() {
               <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          FAQ
+      ═══════════════════════════════════════════════ */}
+      <section id="faq" className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
+              <Sparkles className="h-4 w-4" />
+              Preguntas frecuentes
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Las dudas más comunes
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Si te queda alguna sin responder, agendá una demo y la charlamos
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
+            {fotografosFaqs.map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

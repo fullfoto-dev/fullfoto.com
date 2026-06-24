@@ -11,11 +11,14 @@ const inter = Inter({ subsets: ["latin"] })
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
+const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION
+const BING_VERIFICATION = process.env.NEXT_PUBLIC_BING_VERIFICATION
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fullfoto.com"),
   title: {
-    default: "FullFoto — Plataforma de venta de fotografías con IA",
+    default: "FullFoto: venta de fotos online con IA, pagos y galerías",
     template: "%s | FullFoto",
   },
   description:
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
       "Venta de fotos con reconocimiento facial, pagos online y galerías personalizadas. +50 empresas confían en nosotros.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "FullFoto — Plataforma de venta de fotografías",
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
     title: "FullFoto — Plataforma de venta de fotografías con IA",
     description:
       "Venta de fotos con reconocimiento facial, pagos online y galerías personalizadas.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -80,6 +83,10 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   alternates: {
     canonical: "/",
+  },
+  verification: {
+    ...(GSC_VERIFICATION ? { google: GSC_VERIFICATION } : {}),
+    ...(BING_VERIFICATION ? { other: { "msvalidate.01": BING_VERIFICATION } } : {}),
   },
 }
 
@@ -107,6 +114,19 @@ export default function RootLayout({
               `}
             </Script>
           </>
+        )}
+
+        {/* Microsoft Clarity (heatmaps + session recordings) */}
+        {CLARITY_ID && (
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${CLARITY_ID}");
+            `}
+          </Script>
         )}
 
         {/* Meta Pixel */}

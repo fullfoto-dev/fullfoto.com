@@ -60,6 +60,9 @@ export default function Navbar({ demoLink = "/agendar-demo", demoText = "Demo gr
             <Link href="/#caracteristicas" className="text-white/90 hover:text-white transition-colors">
               Características
             </Link>
+            <Link href="/casos-de-exito" className="text-white/90 hover:text-white transition-colors">
+              Casos
+            </Link>
             <Link href="/precios" className="text-white/90 hover:text-white transition-colors">
               Precios
             </Link>
