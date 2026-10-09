@@ -274,10 +274,10 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "+10M", label: "Fotos subidas" },
+              { value: "+12M", label: "Fotos subidas" },
               { value: "+35k", label: "Usuarios registrados" },
               { value: "+500", label: "PHs activos" },
-              { value: "+100k", label: "Ventas cerradas" },
+              { value: "+150k", label: "Ventas cerradas" },
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-blue-200 bg-clip-text text-transparent">{stat.value}</div>
